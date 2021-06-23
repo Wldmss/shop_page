@@ -2,6 +2,8 @@ server:
   port: 1304
 
 spring:
+  application:
+    name: shop
   profiles:
     active: local
   main:
@@ -12,6 +14,18 @@ spring:
       max-request-size: 20MB
   jpa:
     show-sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://iqsbz-test.cmzny3nijw9z.ap-northeast-2.rds.amazonaws.com:3306/iqsbz3?serverTimezone=UTC
+    username: iqsbz
+    password: '!SqiSoft00'
+#    maximum-pool-size: 1
+#    connection-test-query: SELECT 1
+#    idle-timeout: 100000
+#    validation-timeout: 3000
+#    max-lifetime: 180000
   output:
     ansi:
       enabled: always
